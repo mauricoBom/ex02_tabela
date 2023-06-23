@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <title>Formlário de reembolso</title>
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/mauricoBom/curso_html_css_javascript/main/mpf.png"
-    />
+    <title>Formlário de reembolso</title>    
+    <link rel="icon" href="https://raw.githubusercontent.com/mauricoBom/curso_html_css_javascript/main/mpf.png">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -16,124 +13,118 @@
   </head>
   <body>
     <nav>
-      <a href="/tabela.html">Tabela de países</a>
+      <a href="/tabela.html">Tabela</a>
       <a href="/form_reembolso.html" aria-current="page"
         >Formulário de reembolso</a
       >
     </nav>
-    <main>
+    <main>      
       <form method="post" action="" name="nfrm_reembolso" id="idfrm_reembolso">
+        <!-- action="" 
+        Definir em action como os dados do formuario serao tratados..
+        -->
         <h1>Formulário de reembolso</h1>
         <div>
           <label for="nome_servidor">Nome do servidor*:</label>
-          <input
-            type="text"
-            id="nome_servidor"
-            required
-            autofocus
-            maxlength="40"
-            size="40"
-          />
+          <input 
+            type="text" 
+            id="nome_servidor" 
+            required 
+            autofocus 
+            maxlength="40" 
+            size="40" >
         </div>
         <div>
-          <label for="matricula_servidor">Matrícula do servidor*:</label>
-          <input
-            type="text"
-            id="matricula_servidor"
-            required
-            maxlength="7"
-            size="7"
-            placeholder="dígitos"
-            oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          />
-          <!-- Expressao regular - aceitar somente numeros
+          <label for="matricula_servidor">Matrícula do servidor*:</label>        
+          <input 
+            type="text" 
+            id="matricula_servidor" 
+            required 
+            maxlength="7" 
+            size="7" 
+            placeholder="dígitos" 
+            oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" >
+            <!-- Expressao regular - aceitar somente numeros
              fonte: https://stackoverflow.com/questions/16883549/html-5-number-regular-expression
             -->
-        </div>
-        <fieldset style="width: 15%">
+        </div>        
+        <fieldset style="width:15%">
           <!--
             a opcao do Radio funcionou somente utilizando o atributo name
           -->
           <legend>Sexo*:</legend>
           <div>
-            <input
-              type="radio"
-              id="sexo_feminino"
-              name="feminino"
-              value="feminino"
-              checked
-            />
+            <input 
+              type="radio" 
+              id="sexo_feminino" 
+              name="feminino" 
+              value="feminino" 
+              checked>
             <label for="sexo_feminino">Feminino</label>
           </div>
           <div>
-            <input
-              type="radio"
-              id="sexo_masculino"
-              name="masculino"
-              value="masculino"
-            />
+            <input 
+              type="radio" 
+              id="sexo_masculino" 
+              name="masculino" 
+              value="masculino">
             <label for="sexo_masculino">Masculino</label>
           </div>
         </fieldset>
         <div>
-          <input type="checkbox" id="exameConsulta" name="exameConsulta" />
+          <input 
+            type="checkbox" 
+            id="exameConsulta" 
+            name="exameConsulta" >
           <label for="exameConsulta">Exame/Consulta de dependente</label>
         </div>
-
+        
         <label for="tipoReembolso">Tipo de Reembolso</label>
         <select id="tipoReembolso">
           <option value="" selected>Selecione</option>
           <option value="consulta">Consulta</option>
           <option value="exame">Exame</option>
-        </select>
+        </select>             
 
         <div>
           <label for="iddataProcedimento">Data do procedimento:</label>
-          <input
-            type="datetime-local"
-            id="iddataProcedimento"
-            name="ndataProcedimento"
+          <input 
+            type="datetime-local" 
+            id="iddataProcedimento" 
+            name="ndataProcedimento" 
             min="2023-05-22T08:00"
-            max="2023-06-22T18:00"
-          />
-        </div>
+            max="2023-06-22T18:00" />          
+        </div>    
         <div>
-          <label for="descricaoPedido">Descrição do Pedido</label>
+          <label  for="descricaoPedido">Descrição do Pedido</label>
           <!-- <br>
             O <br> deixaria o label acima da textarea
             Porem dificultaria a vida dos leitores de acessibilidade (?)
            -->
-          <textarea
-            id="descricaoPedido"
-            rows="5"
-            cols="50"
+          <textarea 
+            id="descricaoPedido" 
+            rows="5" 
+            cols="50" 
             placeholder="Descreva aqui seu pedido..."
-          ></textarea>
+            ></textarea>          
         </div>
-
+        
         <div>
-          <label for="observacoes">Observacoes</label>
-          <textarea
-            id="observacoes"
-            rows="5"
-            cols="50"
+          <label  for="observacoes">Observacoes</label>
+          <textarea 
+            id="observacoes" 
+            rows="5" 
+            cols="50" 
             placeholder="Descreva aqui suas observações..."
-          ></textarea>
+            ></textarea>          
         </div>
 
-        <input
-          type="submit"
-          formaction="/reembolso_enviado.html"
-          value="Enviar formulario"
-        />
+        <input type="submit" formaction="/reembolso_enviado.html" value="Enviar formulario">
         <!--
           Primeiro validar campos? Javascript?
         -->
 
-        <input type="submit" value="Limpar campos" />
-        <!--
-          Limpar campos: Javascript?
-        -->
+        <input type="reset" value="Limpar campos">    
       </form>
     </main>
   </body>
